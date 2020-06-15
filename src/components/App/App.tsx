@@ -19,16 +19,17 @@ class App extends Component<RouteComponentProps, { pages: (PageContainer)[] }> {
         this.state = {
             pages: [
                 {
+                    text: "Projects",
+                    path: "/projects",
+                    page: (pr: any) => <Projects {...pr}/>,
+                },
+                {
                     text: "About Us",
                     path: "/about",
                     page: (pr: any) => <AboutUs  {...pr}/>,
 
-                },
-                {
-                    text: "Projects",
-                    path: "/projects",
-                    page: (pr: any) => <Projects {...pr}/>,
                 }
+
             ]
         }
 
