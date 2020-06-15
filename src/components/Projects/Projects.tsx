@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-class AboutUs extends Component<{}, any> {
+class Projects extends Component<{}, any> {
 
     render() {
 
@@ -14,4 +14,4 @@ class AboutUs extends Component<{}, any> {
     }
 }
 
-export default AboutUs;
+export default Projects;
