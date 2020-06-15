@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './App.css';
-import {Route, RouteComponentProps, Switch, withRouter} from "react-router-dom";
+import {Route, RouteComponentProps, Switch, withRouter, Redirect} from "react-router-dom";
 import AboutUs from "../AbousUs/AboutUs";
 import NavBar from "../NavBar/NavBar";
 import Projects from "../Projects/Projects";
@@ -21,13 +21,13 @@ class App extends Component<RouteComponentProps, { pages: (PageContainer)[] }> {
                 {
                     text: "About Us",
                     path: "/about",
-                    page: <AboutUs/>,
+                    page: (pr: any) => <AboutUs  {...pr}/>,
 
                 },
                 {
                     text: "Projects",
                     path: "/projects",
-                    page: <Projects/>,
+                    page: (pr: any) => <Projects {...pr}/>,
                 }
             ]
         }
@@ -42,10 +42,9 @@ class App extends Component<RouteComponentProps, { pages: (PageContainer)[] }> {
                 <Switch>
                     {pages.map((item, index) => {
                         const {page, path} = item;
-                        return (
-                            <Route key={index} exact path={path} render={() => page}/>
-                        );
+                        return (<Route exact key={index} path={path} render={page}/>);
                     })}
+                    <Redirect from="/" to="/about"/>
                 </Switch>
             </div>
         );

@@ -32,15 +32,17 @@ class NavBar extends React.Component<{ pages: (PageContainer)[] } & RouteCompone
 
     constructor(props: any) {
         super(props);
+        const {pages} = props;
+        const {location} = props;
+        const {pathname} = location;
         this.state = {
-            value: 0,
+            value: pages.findIndex(({path}:any) => pathname.startsWith(path)),
         }
     }
 
     handleChange = (event: React.ChangeEvent<{}>, newValue: number) => {
         const {history, pages} = this.props;
         this.setState({value: newValue})
-        console.log(pages[newValue].path)
         history.push(`${pages[newValue].path}`)
     }
 
