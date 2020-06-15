@@ -35,8 +35,9 @@ class NavBar extends React.Component<{ pages: (PageContainer)[] } & RouteCompone
         const {pages} = props;
         const {location} = props;
         const {pathname} = location;
+        let page = pages.findIndex(({path}:any) => pathname.startsWith(path))
         this.state = {
-            value: pages.findIndex(({path}:any) => pathname.startsWith(path)),
+            value: page === -1? 0 : page,
         }
     }
 
