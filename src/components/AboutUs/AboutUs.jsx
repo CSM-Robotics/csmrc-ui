@@ -1,10 +1,9 @@
-import React, { Component } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import React from 'react';
+import {makeStyles} from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
-import Link from '@material-ui/core/Link';
 //custom components
 import MainCard from './subComponents/MainCard';
 import LocationCard from './subComponents/LocationCard';
@@ -47,7 +46,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-
 const AboutUs = () => {
     const classes = useStyles();
     //also we get people, content from importing json files
@@ -55,19 +53,19 @@ const AboutUs = () => {
     return (
 
         <div>
-            <CssBaseline />
-            <Container maxWidth="lg" >
+            <CssBaseline/>
+            <Container maxWidth="lg">
                 <Typography gutterBottom variant="h4" component="h1" className={classes.marginTop}>
                     College of San Mateo Robotics Club
                 </Typography>
                 <Grid container spacing={3} className={classes.marginTop}>
                     {/* main content card */}
                     <Grid item xs={12} sm={8}>
-                        <MainCard classes={classes} people={people} content={content} />
+                        <MainCard classes={classes} people={people} content={content}/>
                     </Grid>
                     {/* location card */}
                     <Grid item xs={12} sm={4}>
-                        <LocationCard classes={classes} />
+                        <LocationCard classes={classes}/>
                     </Grid>
                 </Grid>
             </Container>

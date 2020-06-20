@@ -1,14 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 
 
-
-
-const MainContentCard = ({ classes, title, text }) => {
+const MainContentCard = ({classes, title, text}) => {
     return (
         <Box className={classes.cardContent}>
-            <Typography gutterBottom variant="h5" component="h1" >
+            <Typography gutterBottom variant="h5" component="h1">
                 {title}
             </Typography>
             <Typography gutterBottom variant="body2" component="p">

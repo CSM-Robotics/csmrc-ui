@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 
 class MapContainer extends Component {
     constructor(props) {
@@ -13,7 +13,7 @@ class MapContainer extends Component {
     }
 
     render() {
-        const { width, height, key, location, zoom } = this.state;
+        const {width, height, key, location, zoom} = this.state;
         return (
             <div>
                 <iframe
@@ -22,7 +22,8 @@ class MapContainer extends Component {
                     width={width}
                     height={height}
                     frameBorder={0}
-                    src={`https://www.google.com/maps/embed/v1/place?key=${key}&q=${location}&zoom=${zoom}`} allowFullScreen>
+                    src={`https://www.google.com/maps/embed/v1/place?key=${key}&q=${location}&zoom=${zoom}`}
+                    allowFullScreen>
 
                 </iframe>
             </div>

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import Card from '@material-ui/core/Card';
 import CardMedia from '@material-ui/core/CardMedia';
@@ -8,7 +8,7 @@ import Button from '@material-ui/core/Button';
 //custom component
 import MapContainer from "./xSubComponents/MapContainer"
 
-const LocationCard = ({ classes }) => {
+const LocationCard = ({classes}) => {
     return (
         <Card className={classes.root}>
             <CardContent className={classes.leftAlign}>
@@ -18,8 +18,9 @@ const LocationCard = ({ classes }) => {
                 </Typography>
                 <Typography variant="body2" component="p">
                     Our meetings are held at the CSM Library Makerspace.
-                    <br /> The Makerspace is located on the left side when you enter the library on the second floor of Building 9.
-                    <br /> Address:
+                    <br/> The Makerspace is located on the left side when you enter the library on the second floor of
+                    Building 9.
+                    <br/> Address:
                 </Typography>
                 <Typography variant="body2" color="textSecondary" component="p">
                     CSM Library - Building 9,
@@ -27,7 +28,7 @@ const LocationCard = ({ classes }) => {
                     San Mateo, CA 94402
                 </Typography>
             </CardContent>
-            <CardMedia> <MapContainer classes={classes} /> </CardMedia>
+            <CardMedia> <MapContainer classes={classes}/> </CardMedia>
             <CardActions>
                 <Button size="small" href="mailto:mail@example.com">Contact Us</Button>
             </CardActions>

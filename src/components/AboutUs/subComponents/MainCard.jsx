@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
+import clsx from 'clsx';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import Card from '@material-ui/core/Card';
@@ -9,13 +10,14 @@ import CardContent from '@material-ui/core/CardContent';
 import MainContentCard from './xSubComponents/MainContentCard';
 import PeopleCard from './xSubComponents/PeopleCard';
 
-const MainCard = ({ classes, content, people }) => {
+const MainCard = ({classes, content, people}) => {
     return (
-        <Card className={classes.root, classes.leftAlign} >
+        <Card className={clsx(classes.root, classes.leftAlign)}>
             <CardContent>
                 {/* Main Content Cards */}
                 <Box className={classes.cardContent}>
-                    {content.map(c => (<MainContentCard key={c.title} title={c.title} text={c.text} classes={classes} />))}
+                    {content.map(c => (
+                        <MainContentCard key={c.title} title={c.title} text={c.text} classes={classes}/>))}
                 </Box>
 
                 {/* email button */}
@@ -25,10 +27,11 @@ const MainCard = ({ classes, content, people }) => {
 
                 {/* Our people */}
                 <Box className={classes.cardContent}>
-                    <Typography gutterBottom variant="h5" component="h1" >
+                    <Typography gutterBottom variant="h5" component="h1">
                         Our People
                     </Typography>
-                    {people.map(p => (<PeopleCard key={p.name} name={p.name} title={p.title} image={p.image} classes={classes} />))}
+                    {people.map(p => (
+                        <PeopleCard key={p.name} name={p.name} title={p.title} image={p.image} classes={classes}/>))}
                 </Box>
             </CardContent>
         </Card>
