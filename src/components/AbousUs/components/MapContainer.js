@@ -1,12 +1,12 @@
 import React, {Component} from "react";
 
-class MapContainer extends Component<{width?:number, height?:number, zoom?:number}, any> {
+class MapContainer extends Component {
     static defaultProps = {
         width:480,
         height:720,
         zoom:15
     }
-    constructor(props:{width:number, height:number, zoom:number}) {
+    constructor(props, {width, height, zoom}) {
         super(props);
         this.state = {
             key:"AIzaSyAoOkFK3Cs4HdeQTLXhb6fwBgSVpUMCqWc",
